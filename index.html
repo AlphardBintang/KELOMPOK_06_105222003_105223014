@@ -4,117 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopi Santai | Nikmati Setiap Tegukan</title>
-    <link rel="stylesheet" href="style.css"> 
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .hero {
             background-image: url('images/hero-bg.jpg');
-            background-size: cover;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 font-sans">
     <header>
-        <h1>Kopi Santai</h1> <p>Nikmati Setiap Tegukan</p> <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="reservation.html">Reservation</a></li>
-            </ul>
+        <nav class="bg-gray-900 text-white p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <a class="text-2xl font-bold" href="index.html">
+                    <h1>Kopi Santai</h1>
+                </a>
+                <span class="text-sm italic hidden lg:block">Nikmati Setiap Tegukan</span>
+                
+                <div id="navbarNav">
+                    <ul class="flex space-x-4">
+                        <li><a class="hover:text-yellow-400 transition" href="index.html">Home</a></li>
+                        <li><a class="hover:text-yellow-400 transition" href="menu.html">Menu</a></li>
+                        <li><a class="hover:text-yellow-400 transition" href="about.html">About</a></li>
+                        <li><a class="hover:text-yellow-400 transition" href="reservation.html">Reservation</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Selamat Datang di **Kopi Santai**</h2>
-            <p>Tempat Terbaik untuk Bersantai dengan Secangkir Kopi</p>
-            <p>
-                <a href="menu.html" class="button primary">Lihat Menu</a>
-                <a href="reservation.html" class="button secondary">Reservasi Sekarang</a>
-            </p>
+    <main class="container mx-auto px-4 py-8">
+        <section class="hero bg-cover bg-center text-white py-24 text-center mb-10 rounded-xl shadow-2xl">
+            <div class="bg-black bg-opacity-40 p-8 rounded-lg inline-block">
+                <h2 class="text-5xl font-extrabold mb-3">Selamat Datang di Kopi Santai</h2>
+                <p class="text-xl mb-6">Tempat Terbaik untuk Bersantai dengan Secangkir Kopi</p>
+                <p>
+                    <a href="menu.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-full text-lg transition duration-300 mr-4">Lihat Menu</a>
+                    <a href="reservation.html" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-bold py-3 px-6 rounded-full text-lg transition duration-300">Reservasi Sekarang</a>
+                </p>
+            </div>
         </section>
 
-        <section id="featured-menu">
-            <h2>Menu Favorit Kami</h2>
-            <div>
-                <article class="menu-card">
-                    <img src="images/espresso.jpg" alt="Foto Espresso" width="200" height="200">
-                    <h3>Espresso Klasik</h3>
-                    <p class="price">Rp 20.000</p>
-                    <p>Shot kopi murni yang kuat dan beraroma.</p>
+        <section id="featured-menu" class="my-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Menu Favorit Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="image/gambar espresso.jpg" alt="Foto Espresso" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Espresso Klasik</h3>
+                        <p class="text-green-600 font-bold mt-1">Rp 20.000</p>
+                        <p class="text-gray-600 text-sm mt-2">Shot kopi murni yang kuat dan beraroma.</p>
+                    </div>
                 </article>
-                <article class="menu-card">
-                    <img src="images/cappuccino.jpg" alt="Foto Cappuccino" width="200" height="200">
-                    <h3>Cappuccino Lembut</h3>
-                    <p class="price">Rp 35.000</p>
-                    <p>Perpaduan sempurna espresso, susu panas, dan busa tebal.</p>
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="image/gambar capucino.jpg" alt="Foto Cappuccino" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Cappuccino Lembut</h3>
+                        <p class="text-green-600 font-bold mt-1">Rp 35.000</p>
+                        <p class="text-gray-600 text-sm mt-2">Perpaduan sempurna espresso, susu panas, dan busa tebal.</p>
+                    </div>
                 </article>
-                <article class="menu-card">
-                    <img src="images/sandwich.jpg" alt="Foto Sandwich" width="200" height="200">
-                    <h3>Club Sandwich</h3>
-                    <p class="price">Rp 45.000</p>
-                    <p>Roti panggang dengan isian ayam, telur, dan sayuran segar.</p>
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="image/gambar sandwich.jpeg" alt="Foto Sandwich" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Club Sandwich</h3>
+                        <p class="text-green-600 font-bold mt-1">Rp 45.000</p>
+                        <p class="text-gray-600 text-sm mt-2">Roti panggang dengan isian ayam, telur, dan sayuran segar.</p>
+                    </div>
                 </article>
-                <article class="menu-card">
-                    <img src="images/red-velvet.jpg" alt="Foto Red Velvet Cake" width="200" height="200">
-                    <h3>Red Velvet Cake</h3>
-                    <p class="price">Rp 40.000</p>
-                    <p>Kue beludru merah yang moist dengan cream cheese frosting.</p>
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img src="image/gambar red velvet.jpg" alt="Foto Red Velvet Cake" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Red Velvet Cake</h3>
+                        <p class="text-green-600 font-bold mt-1">Rp 40.000</p>
+                        <p class="text-gray-600 text-sm mt-2">Kue beludru merah yang moist dengan cream cheese frosting.</p>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section id="why-choose-us">
-            <h2>Mengapa Memilih Kami?</h2>
-            <div>
-                <article class="advantage">
-                    <img src="icons/coffee-bean.svg" alt="Icon Biji Kopi" width="50" height="50">
-                    <h3>Biji Kopi Premium</h3>
-                    <p>Dipilih dari perkebunan lokal terbaik, disangrai dengan sempurna.</p>
+        <section id="why-choose-us" class="my-12 p-10 bg-gray-100 rounded-xl">
+            <h2 class="text-3xl font-bold text-center mb-8">Mengapa Memilih Kami?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <article class="advantage p-4 bg-white rounded-lg shadow-md">
+                    <div class="text-yellow-500 text-5xl mb-3">☕</div> 
+                    <h3 class="text-xl font-semibold">Biji Kopi Premium</h3>
+                    <p class="text-gray-600">Dipilih dari perkebunan lokal terbaik, disangrai dengan sempurna.</p>
                 </article>
-                <article class="advantage">
-                    <img src="icons/sofa.svg" alt="Icon Sofa" width="50" height="50">
-                    <h3>Suasana Nyaman</h3>
-                    <p>Interior yang menenangkan, cocok untuk bekerja maupun bersantai.</p>
+                <article class="advantage p-4 bg-white rounded-lg shadow-md">
+                     <div class="text-yellow-500 text-5xl mb-3">🛋️</div> 
+                    <h3 class="text-xl font-semibold">Suasana Nyaman</h3>
+                    <p class="text-gray-600">Interior yang menenangkan, cocok untuk bekerja maupun bersantai.</p>
                 </article>
-                <article class="advantage">
-                    <img src="icons/wifi.svg" alt="Icon Wifi" width="50" height="50">
-                    <h3>Wifi Gratis & Cepat</h3>
-                    <p>Tetap terhubung tanpa hambatan dengan koneksi internet kami.</p>
+                <article class="advantage p-4 bg-white rounded-lg shadow-md">
+                     <div class="text-yellow-500 text-5xl mb-3">📶</div> 
+                    <h3 class="text-xl font-semibold">Wifi Gratis & Cepat</h3>
+                    <p class="text-gray-600">Tetap terhubung tanpa hambatan dengan koneksi internet kami.</p>
                 </article>
             </div>
         </section>
     </main>
 
-    <footer>
-        <section class="contact-info">
-            <h3>Hubungi Kami</h3>
-            <address>
-                <p>Jl. Jendral Sudirman No. 123, Jakarta Pusat</p>
-                <p>Telepon: <a href="tel:+6221xxxxxx">(021) XXXX XXXX</a></p>
-                <p>Email: <a href="mailto:halo@kopisantai.com">halo@kopisantai.com</a></p>
-            </address>
-        </section>
+    <footer class="bg-gray-900 text-white p-8">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap justify-between">
+                <section class="w-full md:w-1/3 mb-6">
+                    <h3 class="text-lg font-semibold border-b border-gray-700 pb-2 mb-3">Hubungi Kami</h3>
+                    <address class="not-italic text-sm space-y-1">
+                        <p>Jl. Jendral Sudirman No. 123, Jakarta Pusat</p>
+                        <p>Telepon: <a href="tel:+6221xxxxxx" class="hover:text-yellow-400">(021) XXXX XXXX</a></p>
+                        <p>Email: <a href="mailto:halo@kopisantai.com" class="hover:text-yellow-400">halo@kopisantai.com</a></p>
+                    </address>
+                </section>
 
-        <section class="hours">
-            <h3>Jam Operasional</h3>
-            <p>Senin - Jumat: 08.00 - 22.00</p>
-            <p>Sabtu - Minggu: 09.00 - 23.00</p>
-        </section>
+                <section class="w-full md:w-1/3 mb-6">
+                    <h3 class="text-lg font-semibold border-b border-gray-700 pb-2 mb-3">Jam Operasional</h3>
+                    <ul class="list-none text-sm space-y-1">
+                        <li>Senin - Jumat: 08.00 - 22.00</li>
+                        <li>Sabtu - Minggu: 09.00 - 23.00</li>
+                    </ul>
+                </section>
 
-        <section class="social-media">
-            <h3>Ikuti Kami</h3>
-            <ul>
-                <li><a href="https://instagram.com/kopisantai" target="_blank">Instagram</a></li>
-                <li><a href="https://facebook.com/kopisantai" target="_blank">Facebook</a></li>
-                <li><a href="https://wa.me/6281xxxxxxx" target="_blank">WhatsApp</a></li>
-            </ul>
-        </section>
-
-        <p class="copyright">&copy; 2024 Kopi Santai. All rights reserved.</p>
+                <section class="w-full md:w-1/3 mb-6">
+                    <h3 class="text-lg font-semibold border-b border-gray-700 pb-2 mb-3">Ikuti Kami</h3>
+                    <ul class="flex space-x-4 text-sm">
+                        <li><a href="https://instagram.com/kopisantai" target="_blank" class="hover:text-yellow-400">Instagram</a></li>
+                        <li><a href="https://facebook.com/kopisantai" target="_blank" class="hover:text-yellow-400">Facebook</a></li>
+                        <li><a href="https://wa.me/6281xxxxxxx" target="_blank" class="hover:text-yellow-400">WhatsApp</a></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="text-center pt-4 mt-4 border-t border-gray-700">
+                <p class="text-xs opacity-75">© 2024 Kopi Santai. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
