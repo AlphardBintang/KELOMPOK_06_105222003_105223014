@@ -9,16 +9,20 @@
 </head>
 <body>
     <header>
-        <h1><a href="index.html">Kopi Santai</a></h1>
-        <p>Nikmati Setiap Tegukan</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="reservation.html">Reservation</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <a href="index.html">
+                <h1>Kopi Santai</h1>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a style="color: #8b6f47;" href="reservation.html">Reservation</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -201,46 +205,50 @@
     </main>
 
     <footer>
-        <section class="contact-info">
-            <h3>Hubungi Kami</h3>
-            <address>
-                <p>Jl. Jendral Sudirman No. 123, Jakarta Pusat</p>
-                <p>Telepon: <a href="tel:+6282388390359">(021) 1234 5678</a></p>
-                <p>Email: <a href="mailto:halo@kopisantai.com">halo@kopisantai.com</a></p>
-            </address>
-        </section>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                <section style="width: 100%; max-width: 300px; margin-right: 2rem;">
+                    <h3>Hubungi Kami</h3>
+                    <address>
+                        <p>Jl. Jendral Sudirman No. 123, Jakarta Pusat</p>
+                        <p>Telepon: <a href="tel:+682388390359">(0823) 8839 0359</a></p>
+                        <p>Email: <a href="mailto:halo@kopisantai.com">halo@kopisantai.com</a></p>
+                    </address>
+                </section>
 
-        <section class="hours">
-            <h3>Jam Operasional</h3>
-            <p>Senin - Jumat: 08.00 - 22.00</p>
-            <p>Sabtu - Minggu: 09.00 - 23.00</p>
-        </section>
+                <section style="width: 100%; max-width: 300px; margin-right: 2rem;">
+                    <h3>Jam Operasional</h3>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>Senin - Jumat: 08.00 - 22.00</li>
+                        <li>Sabtu - Minggu: 09.00 - 23.00</li>
+                    </ul>
+                </section>
 
-        <section class="social-media">
-            <h3>Ikuti Kami</h3>
-            <ul>
-                <li><a href="https://instagram.com/kopisantai" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                <li><a href="https://facebook.com/kopisantai" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                <li><a href="https://wa.me/6282388390359" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-            </ul>
-        </section>
-
-        <p class="copyright">&copy; 2024 Kopi Santai. All rights reserved.</p>
+                <section style="width: 100%; max-width: 300px;">
+                    <h3>Ikuti Kami</h3>
+                    <ul style="display: flex; gap: 1.5rem; list-style: none; padding-left: 0;">
+                        <li><a href="https://instagram.com/kopisantai" target="_blank">Instagram</a></li>
+                        <li><a href="https://facebook.com/kopisantai" target="_blank">Facebook</a></li>
+                        <li><a href="https://wa.me/6282388390359" target="_blank">WhatsApp</a></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Kopi Santai. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // Set minimum date to today
         document.addEventListener('DOMContentLoaded', function() {
             const dateInput = document.getElementById('date');
             const today = new Date().toISOString().split('T')[0];
             dateInput.setAttribute('min', today);
         });
 
-        // Form validation feedback
         const form = document.getElementById('reservation-form');
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            // Here you would normally send the data to a server
             alert('Terima kasih! Reservasi Anda telah diterima. Kami akan mengkonfirmasi melalui email atau telepon dalam waktu 1x24 jam.');
             form.reset();
         });
