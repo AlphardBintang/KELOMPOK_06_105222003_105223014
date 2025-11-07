@@ -4,180 +4,533 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Kopi Santai</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background-color: #fafafa;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #8b6f47;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #6b5435;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e8e8e8;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        header h1 {
+            margin-bottom: 0.25rem;
+            font-size: 1.75rem;
+        }
+
+        header h1 a {
+            color: #1a1a1a;
+            transition: color 0.3s ease;
+        }
+
+        header h1 a:hover {
+            color: #8b6f47;
+        }
+
+        header > p {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: #2c2c2c;
+            font-size: 0.95rem;
+            font-weight: 400;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #8b6f47;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #8b6f47;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        section h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        footer {
+            background-color: #2c2c2c;
+            color: #e8e8e8;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        footer h3 {
+            color: #ffffff;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        footer section {
+            margin-bottom: 2rem;
+        }
+
+        footer address {
+            font-style: normal;
+            line-height: 1.8;
+        }
+
+        footer address p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #d4c4a8;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        footer .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            color: #999;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-filters {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .menu-filters button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #1a1a1a;
+            border-radius: 9999px;
+            background-color: transparent;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .menu-filters button:hover,
+        .menu-filters button.active {
+            background-color: #1a1a1a;
+            color: white;
+        }
+        
+        .menu-filters button.active {
+            background-color: #8b6f47;
+            border-color: #8b6f47;
+            color: white;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .menu-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 8rem;
+            object-fit: cover;
+        }
+
+        .menu-item figcaption {
+            padding: 0.5rem;
+            font-size: 0.75rem;
+            color: #999;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .menu-item .content {
+            padding: 0.75rem;
+        }
+        
+        .menu-item .content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-item .description {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item .price {
+            font-weight: bold;
+            font-size: 1.125rem;
+            color: #4caf50;
+            margin-top: 0.25rem;
+            margin-bottom: 0;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0 0.5rem;
+            border-radius: 9999px;
+            margin-left: 0.25rem;
+            line-height: 1.5;
+        }
+        .tag.best-seller {
+            background-color: #ffc107;
+            color: #1a1a1a;
+        }
+        .tag.new {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        footer .footer-content {
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 2rem;
+        }
+        footer .footer-flex {
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: space-between;
+        }
+        footer .col {
+            width: 100%;
+            max-width: 300px; 
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 1023px) {
+            header .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header nav {
+                margin-top: 1rem;
+                width: 100%;
+            }
+            header nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body>
     <header>
-        <nav class="bg-gray-900 text-white p-4">
-            <div class="container mx-auto flex justify-between items-center">
-                <a class="text-2xl font-bold" href="index.html">Kopi Santai</a>
-                <div id="navbarNav">
-                    <ul class="flex space-x-4">
-                        <li><a class="hover:text-yellow-400 transition" href="index.html">Home</a></li>
-                        <li><a class="text-yellow-400" href="menu.html">Menu</a></li>
-                        <li><a class="hover:text-yellow-400 transition" href="about.html">About</a></li>
-                        <li><a class="hover:text-yellow-400 transition" href="reservation.html">Reservation</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div class="header-content">
+            <a href="index.html">
+                <h1>Kopi Santai</h1>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a style="color: #8b6f47;" href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
+    <main>
         <section id="menu-list">
-            <h2 class="text-3xl font-bold text-center mb-8">Daftar Menu Lengkap</h2>
+            <h2>Daftar Menu Lengkap</h2>
             
-            <nav class="flex justify-center space-x-3 mb-8" aria-label="Menu Filters">
-                <button type="button" class="px-4 py-2 border border-gray-900 rounded-full text-white bg-gray-900 transition duration-300" data-filter="all">All</button>
-                <button type="button" class="px-4 py-2 border border-gray-900 rounded-full text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300" data-filter="coffee">Coffee</button>
-                <button type="button" class="px-4 py-2 border border-gray-900 rounded-full text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300" data-filter="non-coffee">Non-Coffee</button>
-                <button type="button" class="px-4 py-2 border border-gray-900 rounded-full text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300" data-filter="food">Food</button>
-                <button type="button" class="px-4 py-2 border border-gray-900 rounded-full text-gray-900 hover:bg-gray-900 hover:text-white transition duration-300" data-filter="snacks">Snacks</button>
+            <nav class="menu-filters" aria-label="Menu Filters">
+                <button type="button" class="active" data-filter="all">All</button>
+                <button type="button" data-filter="coffee">Coffee</button>
+                <button type="button" data-filter="non-coffee">Non-Coffee</button>
+                <button type="button" data-filter="food">Food</button>
+                <button type="button" data-filter="snacks">Snacks</button>
             </nav>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 menu-grid">
+            <div class="menu-grid">
                 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="coffee">
-                    <figure class="m-0">
-                        <img src="image/gambar espresso.jpg" class="w-full h-32 object-cover" alt="Espresso">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Kopi Murni</figcaption>
+                <article class="menu-item" data-category="coffee">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar espresso.jpg" alt="Espresso">
+                        <figcaption>Kopi Murni</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Espresso <span class="bg-yellow-500 text-gray-900 text-xs font-semibold px-2 py-0.5 rounded-full inline-block ml-1">Best Seller</span></h3>
-                        <p class="text-sm text-gray-600 description">Shot kopi konsentrat.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 20.000</p>
+                    <div class="content">
+                        <h3>Espresso <span class="tag best-seller">Best Seller</span></h3>
+                        <p class="description">Shot kopi konsentrat.</p>
+                        <p class="price">Rp 20.000</p>
                     </div>
                 </article>
 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="coffee">
-                    <figure class="m-0">
-                        <img src="image/gambar capucino.jpg" class="w-full h-32 object-cover" alt="Cappuccino">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Kopi dan Busa</figcaption>
+                <article class="menu-item" data-category="coffee">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar capucino.jpg" alt="Cappuccino">
+                        <figcaption>Kopi dan Busa</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Cappuccino</h3>
-                        <p class="text-sm text-gray-600 description">Susu berbusa dengan espresso.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 35.000</p>
+                    <div class="content">
+                        <h3>Cappuccino</h3>
+                        <p class="description">Susu berbusa dengan espresso.</p>
+                        <p class="price">Rp 35.000</p>
                     </div>
                 </article>
 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="coffee">
-                    <figure class="m-0">
-                        <img src="image/gambar latte.jpg" class="w-full h-32 object-cover" alt="Latte">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Kopi dan Susu</figcaption>
+                <article class="menu-item" data-category="coffee">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar latte.jpg" alt="Latte">
+                        <figcaption>Kopi dan Susu</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Cafe Latte</h3>
-                        <p class="text-sm text-gray-600 description">Espresso dengan susu steamed.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 35.000</p>
+                    <div class="content">
+                        <h3>Cafe Latte</h3>
+                        <p class="description">Espresso dengan susu steamed.</p>
+                        <p class="price">Rp 35.000</p>
                     </div>
                 </article>
                 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="coffee">
-                    <figure class="m-0">
-                        <img src="image/gambar americano.jpg" class="w-full h-32 object-cover" alt="Americano">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Kopi Hitam</figcaption>
+                <article class="menu-item" data-category="coffee">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar americano.jpg" alt="Americano">
+                        <figcaption>Kopi Hitam</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Americano Dingin <span class="bg-green-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full inline-block ml-1">New</span></h3>
-                        <p class="text-sm text-gray-600 description">Espresso dicampur air dingin.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 30.000</p>
+                    <div class="content">
+                        <h3>Americano Dingin <span class="tag new">New</span></h3>
+                        <p class="description">Espresso dicampur air dingin.</p>
+                        <p class="price">Rp 30.000</p>
                     </div>
                 </article>
                 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="non-coffee">
-                    <figure class="m-0">
-                        <img src="image/gambar hot coklat.jpeg" class="w-full h-32 object-cover" alt="Hot Chocolate">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Minuman Cokelat</figcaption>
+                <article class="menu-item" data-category="non-coffee">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar hot coklat.jpeg" alt="Hot Chocolate">
+                        <figcaption>Minuman Cokelat</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Hot Chocolate</h3>
-                        <p class="text-sm text-gray-600 description">Cokelat premium yang kental.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 38.000</p>
+                    <div class="content">
+                        <h3>Hot Chocolate</h3>
+                        <p class="description">Cokelat premium yang kental.</p>
+                        <p class="price">Rp 38.000</p>
                     </div>
                 </article>
                 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="non-coffee">
-                    <figure class="m-0">
-                        <img src="image/gambar matcha.webp" class="w-full h-32 object-cover" alt="Matcha Latte">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Teh Hijau Jepang</figcaption>
+                <article class="menu-item" data-category="non-coffee">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar matcha.webp" alt="Matcha Latte">
+                        <figcaption>Teh Hijau Jepang</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Iced Matcha Latte</h3>
-                        <p class="text-sm text-gray-600 description">Matcha otentik dengan susu segar.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 40.000</p>
+                    <div class="content">
+                        <h3>Iced Matcha Latte</h3>
+                        <p class="description">Matcha otentik dengan susu segar.</p>
+                        <p class="price">Rp 40.000</p>
                     </div>
                 </article>
                 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="non-coffee">
-                    <figure class="m-0">
-                        <img src="image/gambar lemon tea.jpg" class="w-full h-32 object-cover" alt="Lemon Tea">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Teh Segar</figcaption>
+                <article class="menu-item" data-category="non-coffee">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar lemon tea.jpg" alt="Lemon Tea">
+                        <figcaption>Teh Segar</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Lemon Tea</h3>
-                        <p class="text-sm text-gray-600 description">Teh klasik dengan perasan lemon.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 25.000</p>
+                    <div class="content">
+                        <h3>Lemon Tea</h3>
+                        <p class="description">Teh klasik dengan perasan lemon.</p>
+                        <p class="price">Rp 25.000</p>
                     </div>
                 </article>
 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="food">
-                    <figure class="m-0">
-                        <img src="image/gambar spagetti.webp" class="w-full h-32 object-cover" alt="Spaghetti">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Pasta Italia</figcaption>
+                <article class="menu-item" data-category="food">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar spagetti.webp" alt="Spaghetti">
+                        <figcaption>Pasta Italia</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Spaghetti Aglio Olio <span class="bg-yellow-500 text-gray-900 text-xs font-semibold px-2 py-0.5 rounded-full inline-block ml-1">Best Seller</span></h3>
-                        <p class="text-sm text-gray-600 description">Pasta dengan bawang putih dan minyak zaitun.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 55.000</p>
+                    <div class="content">
+                        <h3>Spaghetti Aglio Olio <span class="tag best-seller">Best Seller</span></h3>
+                        <p class="description">Pasta dengan bawang putih dan minyak zaitun.</p>
+                        <p class="price">Rp 55.000</p>
                     </div>
                 </article>
                 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="food">
-                    <figure class="m-0">
-                        <img src="image/gambar sandwich.jpeg" class="w-full h-32 object-cover" alt="Sandwich">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Roti Isi</figcaption>
+                <article class="menu-item" data-category="food">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar sandwich.jpeg" alt="Sandwich">
+                        <figcaption>Roti Isi</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Chicken Sandwich</h3>
-                        <p class="text-sm text-gray-600 description">Roti isi ayam panggang.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 48.000</p>
+                    <div class="content">
+                        <h3>Chicken Sandwich</h3>
+                        <p class="description">Roti isi ayam panggang.</p>
+                        <p class="price">Rp 48.000</p>
                     </div>
                 </article>
                 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="food">
-                    <figure class="m-0">
-                        <img src="image/gambar caesar salad.jpg" class="w-full h-32 object-cover" alt="Caesar Salad">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Sayuran Segar</figcaption>
+                <article class="menu-item" data-category="food">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar caesar salad.jpg" alt="Caesar Salad">
+                        <figcaption>Sayuran Segar</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Caesar Salad</h3>
-                        <p class="text-sm text-gray-600 description">Salad segar dengan dressing Caesar.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 45.000</p>
+                    <div class="content">
+                        <h3>Caesar Salad</h3>
+                        <p class="description">Salad segar dengan dressing Caesar.</p>
+                        <p class="price">Rp 45.000</p>
                     </div>
                 </article>
                 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="snacks">
-                    <figure class="m-0">
-                        <img src="image/gambar lava cake.jpeg" class="w-full h-32 object-cover" alt="Lava Cake">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Kue Cokelat</figcaption>
+                <article class="menu-item" data-category="snacks">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar lava cake.jpeg" alt="Lava Cake">
+                        <figcaption>Kue Cokelat</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Lava Cake</h3>
-                        <p class="text-sm text-gray-600 description">Kue cokelat dengan lelehan di tengah.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 40.000</p>
+                    <div class="content">
+                        <h3>Lava Cake</h3>
+                        <p class="description">Kue cokelat dengan lelehan di tengah.</p>
+                        <p class="price">Rp 40.000</p>
                     </div>
                 </article>
                 
-                <article class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-category="snacks">
-                    <figure class="m-0">
-                        <img src="image/gambar cookies.jpg" class="w-full h-32 object-cover" alt="Cookies">
-                        <figcaption class="p-2 text-xs text-gray-500 text-center">Kue Kering</figcaption>
+                <article class="menu-item" data-category="snacks">
+                    <figure style="margin: 0;">
+                        <img src="image/gambar cookies.jpg" alt="Cookies">
+                        <figcaption>Kue Kering</figcaption>
                     </figure>
-                    <div class="p-3">
-                        <h3 class="text-lg font-semibold">Choco Chip Cookies <span class="bg-green-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full inline-block ml-1">New</span></h3>
-                        <p class="text-sm text-gray-600 description">Cookies renyah dengan potongan cokelat.</p>
-                        <p class="font-bold text-lg text-green-600 mt-1">Rp 25.000</p>
+                    <div class="content">
+                        <h3>Choco Chip Cookies <span class="tag new">New</span></h3>
+                        <p class="description">Cookies renyah dengan potongan cokelat.</p>
+                        <p class="price">Rp 25.000</p>
                     </div>
                 </article>
 
@@ -185,8 +538,39 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-white p-8">
-        <div class="container mx-auto">...</div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-flex">
+                <section class="col">
+                    <h3>Hubungi Kami</h3>
+                    <address>
+                        <p>Jl. Jendral Sudirman No. 123, Jakarta Pusat</p>
+                        <p>Telepon: <a href="tel:+6221xxxxxx">(021) XXXX XXXX</a></p>
+                        <p>Email: <a href="mailto:halo@kopisantai.com">halo@kopisantai.com</a></p>
+                    </address>
+                </section>
+
+                <section class="col">
+                    <h3>Jam Operasional</h3>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>Senin - Jumat: 08.00 - 22.00</li>
+                        <li>Sabtu - Minggu: 09.00 - 23.00</li>
+                    </ul>
+                </section>
+
+                <section class="col">
+                    <h3>Ikuti Kami</h3>
+                    <ul class="social-media" style="display: flex; gap: 1.5rem; list-style: none; padding-left: 0;">
+                        <li><a href="https://instagram.com/kopisantai" target="_blank">Instagram</a></li>
+                        <li><a href="https://facebook.com/kopisantai" target="_blank">Facebook</a></li>
+                        <li><a href="https://wa.me/6281xxxxxxx" target="_blank">WhatsApp</a></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="copyright">
+                <p>© 2024 Kopi Santai. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
