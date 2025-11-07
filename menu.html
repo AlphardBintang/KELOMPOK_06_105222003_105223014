@@ -156,7 +156,7 @@
 
         section h2 {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid #e8e8e8;
         }
@@ -217,37 +217,6 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .menu-filters {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .menu-filters button {
-            padding: 0.5rem 1rem;
-            border: 1px solid #1a1a1a;
-            border-radius: 9999px;
-            background-color: transparent;
-            color: #1a1a1a;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            cursor: pointer;
-        }
-
-        .menu-filters button:hover,
-        .menu-filters button.active {
-            background-color: #1a1a1a;
-            color: white;
-        }
-        
-        .menu-filters button.active {
-            background-color: #8b6f47;
-            border-color: #8b6f47;
-            color: white;
         }
 
         .menu-grid {
@@ -380,14 +349,6 @@
         <section id="menu-list">
             <h2>Daftar Menu Lengkap</h2>
             
-            <nav class="menu-filters" aria-label="Menu Filters">
-                <button type="button" class="active" data-filter="all">All</button>
-                <button type="button" data-filter="coffee">Coffee</button>
-                <button type="button" data-filter="non-coffee">Non-Coffee</button>
-                <button type="button" data-filter="food">Food</button>
-                <button type="button" data-filter="snacks">Snacks</button>
-            </nav>
-
             <div class="menu-grid">
                 
                 <article class="menu-item" data-category="coffee">
