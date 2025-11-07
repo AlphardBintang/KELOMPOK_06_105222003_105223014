@@ -156,7 +156,7 @@
 
         section h2 {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid #e8e8e8;
         }
@@ -210,7 +210,6 @@
             font-size: 0.875rem;
             color: #999;
         }
-        
         .header-content {
             display: flex;
             justify-content: space-between;
@@ -218,7 +217,36 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+        .menu-filters {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
 
+        .menu-filters button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #1a1a1a;
+            border-radius: 9999px;
+            background-color: transparent;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .menu-filters button:hover,
+        .menu-filters button.active {
+            background-color: #1a1a1a;
+            color: white;
+        }
+        
+        .menu-filters button.active {
+            background-color: #8b6f47;
+            border-color: #8b6f47;
+            color: white;
+        }
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -277,7 +305,6 @@
             margin-top: 0.25rem;
             margin-bottom: 0;
         }
-
         .tag {
             font-size: 0.75rem;
             font-weight: 600;
@@ -294,7 +321,6 @@
             background-color: #4caf50;
             color: white;
         }
-
         footer .footer-content {
             max-width: 1200px; 
             margin: 0 auto; 
@@ -310,7 +336,6 @@
             max-width: 300px; 
             margin-bottom: 2rem;
         }
-        
         @media (max-width: 1023px) {
             header .header-content {
                 flex-direction: column;
@@ -349,6 +374,14 @@
         <section id="menu-list">
             <h2>Daftar Menu Lengkap</h2>
             
+            <nav class="menu-filters" aria-label="Menu Filters">
+                <button type="button" class="active" data-filter="all">All</button>
+                <button type="button" data-filter="coffee">Coffee</button>
+                <button type="button" data-filter="non-coffee">Non-Coffee</button>
+                <button type="button" data-filter="food">Food</button>
+                <button type="button" data-filter="snacks">Snacks</button>
+            </nav>
+
             <div class="menu-grid">
                 
                 <article class="menu-item" data-category="coffee">
@@ -453,8 +486,8 @@
                         <figcaption>Roti Isi</figcaption>
                     </figure>
                     <div class="content">
-                        <h3>Chicken Sandwich</h3>
-                        <p class="description">Roti isi ayam panggang.</p>
+                        <h3>Sandwich <span class="tag best-seller">Best Seller</span></h3>
+                        <p class="description">Roti isi daging olahan.</p>
                         <p class="price">Rp 48.000</p>
                     </div>
                 </article>
@@ -506,7 +539,7 @@
                     <h3>Hubungi Kami</h3>
                     <address>
                         <p>Jl. Jendral Sudirman No. 123, Jakarta Pusat</p>
-                        <p>Telepon: <a href="tel:+6282388390359">(0823) 8839 0359</a></p>
+                        <p>Telepon: <a href="tel:+6221xxxxxx">(021) XXXX XXXX</a></p>
                         <p>Email: <a href="mailto:halo@kopisantai.com">halo@kopisantai.com</a></p>
                     </address>
                 </section>
@@ -524,7 +557,7 @@
                     <ul class="social-media" style="display: flex; gap: 1.5rem; list-style: none; padding-left: 0;">
                         <li><a href="https://instagram.com/kopisantai" target="_blank">Instagram</a></li>
                         <li><a href="https://facebook.com/kopisantai" target="_blank">Facebook</a></li>
-                        <li><a href="https://wa.me/6282388390359" target="_blank">WhatsApp</a></li>
+                        <li><a href="https://wa.me/6281xxxxxxx" target="_blank">WhatsApp</a></li>
                     </ul>
                 </section>
             </div>
