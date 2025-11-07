@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Kopi Santai</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Kopi Santai</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="menu-list">
+            <h2>Daftar Menu Lengkap</h2>
+            
+            <nav class="menu-filters">
+                <button data-filter="all">All</button>
+                <button data-filter="coffee">Coffee</button>
+                <button data-filter="non-coffee">Non-Coffee</button>
+                <button data-filter="food">Food</button>
+                <button data-filter="snacks">Snacks</button>
+            </nav>
+
+            <div class="menu-grid">
+                <article class="menu-item" data-category="coffee">
+                    <figure>
+                        <img src="images/espresso-mini.jpg" alt="Espresso" width="150" height="150">
+                        <figcaption>Kopi Murni</figcaption>
+                    </figure>
+                    <h3>Espresso <mark>Best Seller</mark></h3>
+                    <p class="description">Shot kopi konsentrat.</p>
+                    <p class="price">Rp 20.000</p>
+                </article>
+                <article class="menu-item" data-category="coffee">
+                    <figure>
+                        <img src="images/cappuccino-mini.jpg" alt="Cappuccino" width="150" height="150">
+                        <figcaption>Kopi dan Busa</figcaption>
+                    </figure>
+                    <h3>Cappuccino</h3>
+                    <p class="description">Susu berbusa dengan espresso.</p>
+                    <p class="price">Rp 35.000</p>
+                </article>
+                <article class="menu-item" data-category="coffee">
+                    <figure>
+                        <img src="images/latte-mini.jpg" alt="Latte" width="150" height="150">
+                        <figcaption>Kopi dan Susu</figcaption>
+                    </figure>
+                    <h3>Cafe Latte</h3>
+                    <p class="description">Espresso dengan susu steamed.</p>
+                    <p class="price">Rp 35.000</p>
+                </article>
+                <article class="menu-item" data-category="coffee">
+                    <figure>
+                        <img src="images/americano-mini.jpg" alt="Americano" width="150" height="150">
+                        <figcaption>Kopi Hitam</figcaption>
+                    </figure>
+                    <h3>Americano Dingin <span class="tag new">New</span></h3>
+                    <p class="description">Espresso dicampur air dingin.</p>
+                    <p class="price">Rp 30.000</p>
+                </article>
+
+                <article class="menu-item" data-category="non-coffee">
+                    <figure>
+                        <img src="images/chocolate-mini.jpg" alt="Hot Chocolate" width="150" height="150">
+                        <figcaption>Minuman Cokelat</figcaption>
+                    </figure>
+                    <h3>Hot Chocolate</h3>
+                    <p class="description">Cokelat premium yang kental.</p>
+                    <p class="price">Rp 38.000</p>
+                </article>
+                <article class="menu-item" data-category="non-coffee">
+                    <figure>
+                        <img src="images/matcha-mini.jpg" alt="Matcha Latte" width="150" height="150">
+                        <figcaption>Teh Hijau Jepang</figcaption>
+                    </figure>
+                    <h3>Iced Matcha Latte</h3>
+                    <p class="description">Matcha otentik dengan susu segar.</p>
+                    <p class="price">Rp 40.000</p>
+                </article>
+                <article class="menu-item" data-category="non-coffee">
+                    <figure>
+                        <img src="images/tea-mini.jpg" alt="Lemon Tea" width="150" height="150">
+                        <figcaption>Teh Segar</figcaption>
+                    </figure>
+                    <h3>Lemon Tea</h3>
+                    <p class="description">Teh klasik dengan perasan lemon.</p>
+                    <p class="price">Rp 25.000</p>
+                </article>
+
+                <article class="menu-item" data-category="food">
+                    <figure>
+                        <img src="images/pasta-mini.jpg" alt="Spaghetti" width="150" height="150">
+                        <figcaption>Pasta Italia</figcaption>
+                    </figure>
+                    <h3>Spaghetti Aglio Olio <mark>Best Seller</mark></h3>
+                    <p class="description">Pasta dengan bawang putih dan minyak zaitun.</p>
+                    <p class="price">Rp 55.000</p>
+                </article>
+                <article class="menu-item" data-category="food">
+                    <figure>
+                        <img src="images/sandwich-mini.jpg" alt="Sandwich" width="150" height="150">
+                        <figcaption>Roti Isi</figcaption>
+                    </figure>
+                    <h3>Chicken Sandwich</h3>
+                    <p class="description">Roti isi ayam panggang.</p>
+                    <p class="price">Rp 48.000</p>
+                </article>
+                <article class="menu-item" data-category="food">
+                    <figure>
+                        <img src="images/salad-mini.jpg" alt="Caesar Salad" width="150" height="150">
+                        <figcaption>Sayuran Segar</figcaption>
+                    </figure>
+                    <h3>Caesar Salad</h3>
+                    <p class="description">Salad segar dengan dressing Caesar.</p>
+                    <p class="price">Rp 45.000</p>
+                </article>
+
+                <article class="menu-item" data-category="snacks">
+                    <figure>
+                        <img src="images/cake-mini.jpg" alt="Lava Cake" width="150" height="150">
+                        <figcaption>Kue Cokelat</figcaption>
+                    </figure>
+                    <h3>Lava Cake</h3>
+                    <p class="description">Kue cokelat dengan lelehan di tengah.</p>
+                    <p class="price">Rp 40.000</p>
+                </article>
+                <article class="menu-item" data-category="snacks">
+                    <figure>
+                        <img src="images/cookies-mini.jpg" alt="Cookies" width="150" height="150">
+                        <figcaption>Kue Kering</figcaption>
+                    </figure>
+                    <h3>Choco Chip Cookies <span class="tag new">New</span></h3>
+                    <p class="description">Cookies renyah dengan potongan cokelat.</p>
+                    <p class="price">Rp 25.000</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <address>...</address>
+        <p class="copyright">&copy; 2024 Kopi Santai. All rights reserved.</p>
+    </footer>
+</body>
+</html>
